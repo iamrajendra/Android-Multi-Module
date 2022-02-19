@@ -1,0 +1,47 @@
+plugins {
+    id "com.android.library"
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libraries.kotlin_std_lib
+    implementation libraries.appcompact
+    implementation libraries.google_material
+    implementation libraries.constraint_layout
+    implementation project(path: ':base')
+    testImplementation libraries.junit
+    androidTestImplementation libraries.unit_testing_ext
+    androidTestImplementation libraries.expresso
+    implementation libraries.dagger
+    kapt libraries.dagger_compiler
+}

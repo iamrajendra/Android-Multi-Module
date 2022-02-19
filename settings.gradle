@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "Multi-module-arti"
 include ':app'
 include ':base'
+include ':featue-one'
+include ':featue-two'
