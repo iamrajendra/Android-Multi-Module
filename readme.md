@@ -1,8 +1,7 @@
-# Multi-Module Android Artitechutre 
-
-![https://www.linkedin.com/in/rajendrarajaramv/](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
-![https://www.facebook.com/rajendrarajaramve](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)
-![https://medium.com/@r-rajaram](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)
+# Multi-Module Android
+![LinkedIn ](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)
+![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)
 
 Multi module is a very important  and lastest trend in mobile technology. It facilitates project to get `sale`, reduces the `time time` and help the developers to work in a larger team structure.  
 
@@ -30,7 +29,7 @@ The project have three modules
 
 ### License
 ```
-   Copyright (C) 2020 MINDORKS NEXTGEN PRIVATE LIMITED
+   Copyright (C) 2022 Rajendra Verma
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
