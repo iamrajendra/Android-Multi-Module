@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Multimodulearti" />
+        android:theme="@style/Theme.Multimodulearti" >
+        <activity android:name=".FeatureTwoActivity"/>
+    </application>
+
 
 </manifest>

@@ -3,6 +3,7 @@ package com.iamrajendra.featue_two
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.iamrajendra.base.data.DatabaseService
 import com.iamrajendra.base.data.NetworkService
@@ -26,5 +27,9 @@ class FeatureTwoActivity :AppCompatActivity() {
             .build()
             .inject(this)
         Log.d("DaggerSample_FeatureTwo", databaseService.toString())
+        var button = findViewById<Button>(R.id.button)
+        button.setOnClickListener({
+            onBackPressed()
+        })
     }
 }

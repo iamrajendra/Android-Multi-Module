@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="MissingDefaultResource"
+    android:id="@+id/feature_one_nav"
+    app:startDestination="@id/featureOneActivity2">
+
+
+    <activity
+        android:id="@+id/featureOneActivity2"
+        android:name="com.iamrajendra.featue_one.FeatureOneActivity"
+        android:label="FeatureOneActivity" />
+</navigation>

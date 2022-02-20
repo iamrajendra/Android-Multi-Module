@@ -44,4 +44,7 @@ dependencies {
     androidTestImplementation libraries.expresso
     implementation libraries.dagger
     kapt libraries.dagger_compiler
+    implementation libraries.naviation_fragment
+    implementation libraries.navigation_ui
+
 }
