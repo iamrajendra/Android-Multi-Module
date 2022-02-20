@@ -1,7 +1,7 @@
 # Multi-Module Android
-![LinkedIn ](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
-![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)
-![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)
+![LinkedIn (https://mindorks.com/open-source-projects)](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+![Facebook (https://mindorks.com/open-source-projects)](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)
+![Medium(https://mindorks.com/open-source-projects)](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)
 
 Multi module is a very important  and lastest trend in mobile technology. It facilitates project to get `sale`, reduces the `time time` and help the developers to work in a larger team structure.  
 

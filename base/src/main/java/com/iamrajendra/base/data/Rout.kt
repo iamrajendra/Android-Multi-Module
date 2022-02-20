@@ -2,12 +2,8 @@ package com.iamrajendra.base.data
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.iamrajendra.base.utils.RxBus
 import io.reactivex.functions.Consumer
-import io.reactivex.internal.util.NotificationLite.accept
-import io.reactivex.subjects.PublishSubject
 import java.io.Serializable
 import javax.inject.Singleton
 
