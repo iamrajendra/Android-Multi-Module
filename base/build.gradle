@@ -44,5 +44,9 @@ dependencies {
     kapt libraries.dagger_compiler
     implementation libraries.rxKotlin
     implementation libraries.rxAndroid
+    implementation libraries.corutine
+    implementation libraries.retrofit
+    implementation libraries.moshi
+    implementation libraries.gson
 
 }

@@ -46,5 +46,9 @@ dependencies {
     kapt libraries.dagger_compiler
     implementation libraries.naviation_fragment
     implementation libraries.navigation_ui
+    implementation libraries.corutine
+    implementation libraries.retrofit
+    implementation libraries.moshi
+    implementation libraries.gson
 
 }
