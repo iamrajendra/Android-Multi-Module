@@ -4,6 +4,7 @@ import com.iamrajendra.base.api.Todos
 import dagger.Module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
 @Module
 class NetworkService {
