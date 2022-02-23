@@ -2,62 +2,61 @@ package com.iamrajendra.featue_one
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.iamrajendra.base.data.DatabaseService
-import com.iamrajendra.base.data.NetworkService
-import com.iamrajendra.base.data.Rout
+import androidx.lifecycle.GeneratedAdapter
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.iamrajendra.base.data.*
+import com.iamrajendra.base.pojo.Post
 import com.iamrajendra.base.utils.InjectUtils
+import com.iamrajendra.featue_one.databinding.ActivityFeatureOneBinding
 import com.iamrajendra.featue_one.di.component.DaggerFeatureOneComponent
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.HttpException
+import com.iamrajendra.featue_one.ui.GenericAdapter
+import com.iamrajendra.featue_one.ui.viewmodel.FeatureOneViewModel
+import com.iamrajendra.featue_one.ui.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 class FeatureOneActivity : AppCompatActivity(){
-    @Inject
-    lateinit var databaseService: DatabaseService
 
     @Inject
-    lateinit var networkService: NetworkService
-    @Inject
     lateinit var  rout: Rout
+    @Inject
+    lateinit var  viewModelFactory: ViewModelFactory
+   var binding:ActivityFeatureOneBinding ?= null
+    private val viewModel: FeatureOneViewModel by viewModels { viewModelFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feature_one)
+        binding  = ActivityFeatureOneBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
         DaggerFeatureOneComponent
             .builder()
             .baseComponent(InjectUtils.provideBaseComponent(applicationContext))
             .build()
             .inject(this)
-        Log.d("DaggerSample_FeatureOne", databaseService.toString())
-        var button:Button  = findViewById<Button>(R.id.button)
-             button.setOnClickListener( {
-           rout.go(Rout.FEATURE_TWO)
-        });
 
-        val service = networkService.makeTodoService()
-        CoroutineScope(Dispatchers.IO).launch {
-            val response = service.getAll()
-            withContext(Dispatchers.Main) {
-                try {
-                    if (response.isSuccessful) {
-                        //Do something with response e.g show to the UI.
-                        Log.i("API data", "data "+response.body())
-                   } else {
-                        Log.e("API Error","The Http  error is ${response.code()}")
-                    }
-                } catch (e: HttpException) {
-                    Log.e("API Error","The error is ${e.message}")
-
-                } catch (e: Throwable) {
-                    Log.e("API Error","The error is ${e.message}")
-                }
+        binding?.list?.layoutManager = LinearLayoutManager(applicationContext)
+        var adapter  = GenericAdapter(type=GenericAdapter.POST)
+        binding?.list?.adapter = adapter
+        viewModel.live.observe(this, Observer {
+            if (it is Response.Loading){
+                print("Loadingg")
+                binding?.pro?.visibility = View.VISIBLE
             }
+            if (it is Response.Successful){
+                var list = it.data as List<Post>
+                print("Success"+list.size)
+                adapter.update(list)
+                binding?.pro?.visibility = View.GONE
+
+            }
+        })
+        viewModel.fetchPost()
         }
-    }
+
 
 }

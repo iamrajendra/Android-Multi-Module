@@ -1,9 +1,6 @@
 package com.iamrajendra.base.di.module
 
-import com.iamrajendra.base.data.DatabaseService
-import com.iamrajendra.base.data.NetworkService
-import com.iamrajendra.base.data.Rout
-import com.iamrajendra.base.data.TodoRepository
+import com.iamrajendra.base.data.*
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -11,17 +8,23 @@ import javax.inject.Singleton
 @Module
 class BaseModule {
 
-@Provides
-@Singleton
-fun  provideDatabaseService()  = DatabaseService()
+ @Provides
+ @Singleton
+ fun provideDatabaseService() = DatabaseService()
 
  @Provides
  @Singleton
  fun provideNetworkService() = NetworkService()
+
  @Provides
  @Singleton
- fun provideRout()  = Rout()
+ fun provideRout() = Rout()
+
  @Provides
  @Singleton
- fun provideTodoRepository () = TodoRepository(NetworkService(),DatabaseService(),)
+
+ fun provideTodoRepository(networkService: NetworkService, databaseService:DatabaseService):TodoRepo{
+
+  return TodoRepositoryImpl(networkService,databaseService)
+}
 }
