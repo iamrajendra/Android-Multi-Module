@@ -53,9 +53,12 @@ class TodoRepositoryImpl @Inject constructor(
 
     override fun fetchFromDatabase(): Flow<Response> = flow {
         emit(Response.Loading)
-        var list = databaseService.getAll()
-        var convertetList = list.map {
-            Post(userId = it.userId, id = it.id, title = it.title, completed = it.completed)
+       var convertetList = listOf<Post>()
+        suspend {
+            var list = databaseService.getAll()
+             convertetList = list.map {
+                Post(userId = it.userId, id = it.id, title = it.title, completed = it.completed)
+            }
         }
         emit(Response.Successful(convertetList))
     }.flowOn(Dispatchers.IO)
