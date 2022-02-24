@@ -1,6 +1,10 @@
 package com.iamrajendra.base.di.module
 
+import android.content.Context
+import androidx.room.Room
 import com.iamrajendra.base.data.*
+import com.iamrajendra.room.dao.AppDatabase
+import com.iamrajendra.room.dao.PostDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -22,8 +26,7 @@ class BaseModule {
 
  @Provides
  @Singleton
-
- fun provideTodoRepository(networkService: NetworkService, databaseService:DatabaseService):TodoRepo{
+ fun provideTodoRepository(networkService: NetworkService, databaseService:PostDao):TodoRepo{
 
   return TodoRepositoryImpl(networkService,databaseService)
 }

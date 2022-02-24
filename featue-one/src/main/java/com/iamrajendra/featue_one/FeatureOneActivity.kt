@@ -18,6 +18,7 @@ import com.iamrajendra.featue_one.di.component.DaggerFeatureOneComponent
 import com.iamrajendra.featue_one.ui.GenericAdapter
 import com.iamrajendra.featue_one.ui.viewmodel.FeatureOneViewModel
 import com.iamrajendra.featue_one.ui.viewmodel.ViewModelFactory
+import com.iamrajendra.room.dao.PostDao
 import javax.inject.Inject
 
 class FeatureOneActivity : AppCompatActivity(){

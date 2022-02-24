@@ -21,7 +21,7 @@ class FeatureOneViewModel @Inject constructor( todoRepo: TodoRepo): ViewModel() 
 
     fun fetchPost(){
     viewModelScope.launch {
-        todoRepo.fetchFromRemote().collect {
+        todoRepo.fetchFromDatabase().collect {
 _live.value = it;
         }
     }
